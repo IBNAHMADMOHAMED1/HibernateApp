@@ -10,14 +10,13 @@ public class Main {
 
         try {
             entityTransaction.begin();
-            Department department = new Department();
-            department.setName("IT");
-            entityManager.persist(department);
-            Employee employee = new Employee();
-            employee.setFirstName("John gg");
-            employee.setLastName("Doe");
-            employee.setDepartmentId(department.getId());
-            entityManager.persist(employee);
+            TypedQuery<Employee> query = entityManager.createNamedQuery("Employee.byDepartment", Employee.class);
+            query.setParameter(1, 1);
+            for (Employee employee : query.getResultList()) {
+                System.out.println(employee.getFirstName() + " " + employee.getLastName());
+            }
+
+
             entityTransaction.commit();
         } catch (Exception e) {
             e.printStackTrace();
