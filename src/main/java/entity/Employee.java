@@ -3,6 +3,7 @@ package entity;
 import jakarta.persistence.*;
 
 @Entity
+@NamedQuery(name = "Employee.byDepartment", query = "select e from Employee e where e.departmentId = ?1")
 public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
