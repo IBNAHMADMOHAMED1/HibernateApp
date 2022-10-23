@@ -1,8 +1,7 @@
 import entity.Department;
 import entity.Employee;
 
-import javax.persistence.*;
-
+import jakarta.persistence.*;
 public class Main {
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("default");

@@ -4,8 +4,8 @@
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
              version="2.2">
 
-    <persistence-unit name="default" transaction-type="RESOURCE_LOCAL" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider> <!-- how to solve this error?  we need to add hibernate-core dependency -->
+    <persistence-unit name="default" transaction-type="RESOURCE_LOCAL">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>entity.Department</class>
         <class>entity.Employee</class>
         <properties>
